@@ -1,23 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import Button from './Button.vue';
+import MyButton from './Button.vue';
 
 const meta = {
   title: 'Example/Button',
-  component: Button,
+  component: MyButton,
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'select', options: ['small', 'medium', 'large'] },
     backgroundColor: { control: 'color' },
-    onClick: { action: 'clicked' },
   },
   args: { primary: false, label: "Click me" },
   render: (args) => ({
     setup() {
-      return () => <div><Button {...args} /></div>
+      return () => <div><MyButton {...args} /></div>
     }
   })
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof MyButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
